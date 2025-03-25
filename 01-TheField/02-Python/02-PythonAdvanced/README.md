@@ -7,12 +7,12 @@ The chapters that you should absolutely cover, either because we think they're e
 - 2. Exception Handling
 - 4. File Handling
 - 5. Scraping
-- 9. Data Structures
+- 3. Data Structures
 
 ## 🌼 Nice to haves
 It would be good to go through these chapters once, but we would rather you spent more time on the must-haves if you have not understood them properly:
 
-- 3. Regex
+- 9. Regex
 - 6. Concurrency
 - 7. Decorators
 - 8. Typing

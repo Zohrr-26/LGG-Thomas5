@@ -12,11 +12,11 @@ The chapters that you should absolutely cover, either because we think they're e
 ## 🌼 Nice to haves
 It would be good to go through these chapters once, but we would rather you spent more time on the must-haves if you have not understood them properly:
 
-- 9. Regex
 - 6. Concurrency
-- 7. Decorators
-- 8. Typing
 - 10. Unit Testing
+- 8. Typing
+- 7. Decorators
+- 9. Regex
 
 ## 🤓 Quiz time
 For this round, you will get two quizzes; one on the must haves and one on the nice to haves.

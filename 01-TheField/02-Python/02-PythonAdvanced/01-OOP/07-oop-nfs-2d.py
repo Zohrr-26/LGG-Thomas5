@@ -1,17 +1,3 @@
-
-class Engine():
-    def __init__(self, speed=0): ## engine ## input = speed (z, s)
-        self.speed = speed ## on peut remplacer speed par 0 et enlever speed=0 de l'init
-        self.position = [0,0]
-
-    def faster(self):
-        if self.speed < 9:
-            self.speed += 1
-
-    def slower(self):
-        if self.speed > 1:    
-            self.speed -= 1
-
 class Wheels(): ## wheels ## rotation grid ## input = rotation (q, d)
 
     def rotate_left(self):
@@ -20,11 +6,10 @@ class Wheels(): ## wheels ## rotation grid ## input = rotation (q, d)
     def rotate_right(self):
         self.direction += 3 ## -=1
 
-class Car(Engine,Wheels): ## main class
-    def __init__(self,name,color): ## can add speed=0
-        super().__init__() ## need to add speed if we add speed=0
-        self.name = name
-        self.color = color
+class Head():
+    def __init__(self, speed=0): ## engine ## input = speed (z, s)
+        self.speed = speed ## on peut remplacer speed par 0 et enlever speed=0 de l'init
+        self.position = [0,0]
         self.direction = 1 # ["positif_y", "negatif_x", "negatif_y", "positif_x"]
 
     def move(self):
@@ -40,15 +25,34 @@ class Car(Engine,Wheels): ## main class
         elif self.direction %4 == 0: # positif_x
             self.position[0] += self.speed
 
+    def faster(self):
+        if self.speed < 9:
+            self.speed += 1
 
-## app ## hybride nfs, snake ##
-## app ## hybride nfs, snake ##
-## app ## hybride nfs, snake ##
+    def slower(self):
+        if self.speed > 1:    
+            self.speed -= 1
+
+class Tail():
+    ## next week
+    pass
+
+class Snake(Head,Wheels,Tail): ## main class
+    def __init__(self,name,color): ## can add speed=0
+        Wheels.__init__(self) ## Car exercice oop-06 legacy
+        Head.__init__(self) ## need to add speed if we add speed=0
+        Tail.__init__(self)
+        self.name = name
+        self.color = color
+
+## app ## snake ##
+## app ## snake ##
+## app ## snake ##
 
 snake_food = [7,2] ## add random.randint(), random X, random Y, add new food ## snake
 color = "blue" # input("choose a color for your car: ")
 name = "test" # input("choose a name for your car: ") 
-user_car = Car(name,color)
+user_car = Snake(name,color)
 
 print(f"you're goal is to reach: {snake_food}")
 print("--- use 'z' to accelerate -----")
